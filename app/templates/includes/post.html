@@ -1,0 +1,31 @@
+{{define "content"}}
+
+<div class="ui secondary menu">
+  <a href="./" class="item">Posts</a>
+  <a href="./post" class="item active">New Post</a>
+</div>
+
+<form class="ui large form" method="POST">
+  <div class="ui left aligned stacked segment">
+  <div class="field">
+    <label>First Name</label>
+    <input type="text" name="name" placeholder="First Name">
+  </div>
+  <div class="field">
+    <label>Short Text</label>
+    <textarea name="message" rows="2"></textarea>
+  </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <input name="terms" type="checkbox" tabindex="0" class="hidden">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <button class="ui button" type="submit">Submit</button>
+  </div>
+</form>
+{{end}}
+
+{{define "javascript"}}
+$('.ui.checkbox').checkbox();
+{{end}}

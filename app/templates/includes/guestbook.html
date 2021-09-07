@@ -1,0 +1,25 @@
+{{define "content"}}
+
+<div class="ui secondary menu">
+  <a href="./" class="item active">Posts</a>
+  <a href="./post" class="item">New Post</a>
+</div>
+
+<div class="ui feed">
+  {{ range .posts }}
+  <div class="event">
+    <div class="label">
+      <img src="/images/avatar/small/elliot.jpg">
+    </div>
+    <div class="content">
+      <div class="summary">
+        <a class="user">{{ .Name }}</a> posted
+        <div class="date">{{ ago .Created }}</div>
+      </div>
+      <div class="extra text">{{ .Message }}</div>
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{end}}
+{{ define "javascript"}}{{end}}
