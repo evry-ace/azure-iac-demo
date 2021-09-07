@@ -1,5 +1,5 @@
 resource "azurerm_container_group" "app" {
-  name                = "example-continst"
+  name                = "app"
   location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
   ip_address_type     = "public"
@@ -32,4 +32,8 @@ resource "azurerm_container_group" "app" {
 
 output "app_ip" {
   value = azurerm_container_group.app.ip_address
+}
+
+output "app_dns" {
+  value = azurerm_container_group.app.fqdn
 }
